@@ -1,3 +1,4 @@
+import { BuildArg } from "./../sdk/src/api/client.gen";
 /**
  * A generated module for Proxy functions
  *
@@ -34,8 +35,14 @@ export class Proxy {
 
   @func()
   async build(src: Directory): Promise<string> {
-    await dag.git().load(src).commit("nsv: pre~build");
-    await this.tag(src);
-    const version = await dag.gitInfo(src).tag();
+    const repo = await dag.git().load(src).commit(`chore: Build
+      
+      BUILD INFO
+
+      nsv: pre~build
+      `).repository();
+    await dag.nsv(repo.state()).tag();
+
+    return await repo.command(["tag"]).stdout();
   }
 }
