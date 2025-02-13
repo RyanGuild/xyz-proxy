@@ -1,0 +1,15 @@
+{
+  "name": "proxy",
+  "engineVersion": "v0.15.4",
+  "sdk": {
+    "source": "typescript"
+  },
+  "dependencies": [
+    {
+      "name": "nsv",
+      "source": "github.com/purpleclay/daggerverse/nsv@nsv/v0.3.0",
+      "pin": "8bbc22b125bbcebbe1b1382969cca636824c6fcc"
+    }
+  ],
+  "source": ".dagger"
+}
