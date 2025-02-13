@@ -6,6 +6,21 @@
   },
   "dependencies": [
     {
+      "name": "git",
+      "source": "github.com/shykes/git@v0.2.0",
+      "pin": "2d0fc9687fdd48519352bc54418292864389e7d7"
+    },
+    {
+      "name": "git-actions",
+      "source": "github.com/puzzle/dagger-module-git-actions/git-actions@v0.9.1",
+      "pin": "034f9e50c01cc5a2b13b81854a48e29ad8162b6a"
+    },
+    {
+      "name": "git-info",
+      "source": "github.com/vbehar/daggerverse/git-info@v0.12.0",
+      "pin": "3455f9156ec289c76002547243ec2dc6330d30a2"
+    },
+    {
       "name": "nsv",
       "source": "github.com/purpleclay/daggerverse/nsv@nsv/v0.3.0",
       "pin": "8bbc22b125bbcebbe1b1382969cca636824c6fcc"

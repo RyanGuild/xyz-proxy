@@ -28,8 +28,14 @@ export class Proxy {
    * Returns a container that echoes whatever string argument is provided
    */
   @func()
-  async version(src: Directory): Promise<string> {
-    const ver = await dag.nsv(src);
-    return await ver.tag();
+  async tag(src: Directory): Promise<string> {
+    return dag.nsv(src).tag();
+  }
+
+  @func()
+  async build(src: Directory): Promise<string> {
+    await dag.git().load(src).commit("nsv: pre~build");
+    await this.tag(src);
+    const version = await dag.gitInfo(src).tag();
   }
 }
