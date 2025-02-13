@@ -29,6 +29,6 @@ export class Proxy {
    */
   @func()
   version(src: Directory): Promise<string> {
-    return dag.nsv(src).tag();
+    return dag.nsv(src).next();
   }
 }
