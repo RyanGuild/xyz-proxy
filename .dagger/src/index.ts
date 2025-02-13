@@ -28,7 +28,8 @@ export class Proxy {
    * Returns a container that echoes whatever string argument is provided
    */
   @func()
-  version(src: Directory): Promise<string> {
-    return dag.nsv(src).next();
+  async version(src: Directory): Promise<string> {
+    const ver = await dag.nsv(src);
+    return await ver.tag();
   }
 }
